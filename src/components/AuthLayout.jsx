@@ -8,7 +8,7 @@ export default function AuthLayout({children,authentication=true}) {
   const [loader,setLoader]=useState(true);
   const authStatus=useSelector(state=>state.auth.status)
 
-
+  
   useEffect(()=>{
     //let authValue=authStatus===true?true:false
     //if(authStatus===true){

@@ -14,9 +14,10 @@ function Home() {
         })
     }, [])
    
-    if (posts.length === 0 && !authStatus) {
+    if (!authStatus) {
         return (
             <div className="w-full py-8 mt-4 text-center">
+                <h1>Not logged in</h1>
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
@@ -29,14 +30,15 @@ function Home() {
             </div>
         )
     }
-
+    
     if(posts.length === 0 && authStatus){
         return (
 <div className="w-full py-8 mt-4 text-center">
                 <Container>
+            <h1>Logged in,{authStatus}</h1>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">
+                            <h1 className="text-2xl font-bold text-zinc-50 hover:text-gray-500">
                               No posts yet
                             </h1>
                         </div>
@@ -46,8 +48,10 @@ function Home() {
         )
     }
 
+    if(authStatus){
     return (
         <div className='w-full py-8'>
+            <h1>Logged in,{authStatus}</h1>
             <Container>
                 <div className='flex flex-wrap'>
                     {posts.map((post) => (
@@ -60,5 +64,6 @@ function Home() {
         </div>
     )
 }
-
+}
 export default Home
+

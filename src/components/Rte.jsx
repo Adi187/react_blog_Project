@@ -32,7 +32,6 @@ export default function RTE({name, control, label, defaultValue =""}) {
         />
     )}
     />
-    <h1 className="text-zinc-50">{conf.appwriteEditorKey}</h1>
      </div>
   )
 }
